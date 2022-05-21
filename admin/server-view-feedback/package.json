@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test jest",
+    "studio-db-test": "NODE_ENV=test prisma studio",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/infra/http/server.ts"
   },
   "keywords": [],

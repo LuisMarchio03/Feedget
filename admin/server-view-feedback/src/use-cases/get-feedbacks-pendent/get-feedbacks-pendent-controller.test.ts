@@ -36,7 +36,7 @@ describe("Get Feedbacks pendent Controller", () => {
   });
 
   afterAll(async () => {
-    await prismaService.feedback.deleteMany({});
+    await prismaService.feedback.deleteMany();
     await prismaService.$disconnect();
   });
 

@@ -20,7 +20,7 @@ describe("Create Category Controller", () => {
   });
 
   afterAll(async () => {
-    await prismaService.feedback.deleteMany({});
+    await prismaService.feedback.deleteMany();
     await prismaService.$disconnect();
   });
 
