@@ -1,5 +1,16 @@
 import { Feedback } from "../infra/domain/feedback";
 
+export interface CreateFeedbackSpyDTO {
+  id: string;
+  type: string;
+  comment: string;
+  screenshot?: string;
+  responsible?: string;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export interface FeedbackRepositoryInterface {
   getFeedbacks(): Promise<Feedback[]>;
   getFeedback(id: string): Promise<Feedback>;

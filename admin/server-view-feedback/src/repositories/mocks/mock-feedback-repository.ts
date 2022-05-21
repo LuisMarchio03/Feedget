@@ -1,15 +1,17 @@
 import { Feedback } from "../../infra/domain/feedback";
 import { FeedbackRepositoryInterface } from "../feedback-repository-interface";
 
-export class MockFeedbackRepository implements FeedbackRepositoryInterface {
-  private feedback: Feedback[] = [];
+export default class MockFeedbackRepository
+  implements FeedbackRepositoryInterface
+{
+  public feedback: Feedback[] = [];
 
   getFeedbacks(): Promise<Feedback[]> {
     return Promise.resolve(this.feedback);
   }
   getFeedback(id: string): Promise<Feedback> {
     return Promise.resolve(
-      this.feedback.find((feedback) => feedback.id === id)
+      this.feedback.find((feedback) => feedback.id === id) as Feedback
     );
   }
   getFeedbacksRejected(): Promise<Feedback[]> {
@@ -28,7 +30,9 @@ export class MockFeedbackRepository implements FeedbackRepositoryInterface {
     );
   }
   changeFeedbackStatus(id: string, status: string): Promise<Feedback> {
-    const feedback = this.feedback.find((feedback) => feedback.id === id);
+    const feedback = this.feedback.find(
+      (feedback) => feedback.id === id
+    ) as Feedback;
     feedback.status = status;
 
     return Promise.resolve(feedback);
