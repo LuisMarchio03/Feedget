@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for use-cases/get-feedbacks/get-feedbacks-controller.ts</title>
+    <title>Code coverage report for use-cases/get-feedbacks-approved/get-feedbacks-approved-use-case.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">use-cases/get-feedbacks</a> get-feedbacks-controller.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">use-cases/get-feedbacks-approved</a> get-feedbacks-approved-use-case.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.47% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/17</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.47% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/17</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -75,43 +75,28 @@
 <a name='L10'></a><a href='#L10'>10</a>
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
-<a name='L13'></a><a href='#L13'>13</a>
-<a name='L14'></a><a href='#L14'>14</a>
-<a name='L15'></a><a href='#L15'>15</a>
-<a name='L16'></a><a href='#L16'>16</a>
-<a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L13'></a><a href='#L13'>13</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response } from "express";
-import { GetFeedbacksUseCase } from "./get-feedbacks-use-case";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Feedback } from "../../infra/domain/feedback";
+import { FeedbackRepositoryInterface } from "../../repositories/feedback-repository-interface";
 &nbsp;
-export class GetFeedbacksController {
-  constructor(private readonly getFeedbacksUseCase: GetFeedbacksUseCase) {}
+export class GetFeedbacksApprovedUseCase {
+  constructor(
+    private readonly feedbackRepository: FeedbackRepositoryInterface
+  ) {}
 &nbsp;
-  async handle(req: Request, res: Response) {
-    try {
-      const feedbacks = await this.getFeedbacksUseCase.execute();
-      return res.status(200).json(feedbacks);
-    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (err) {</span>
-<span class="cstat-no" title="statement not covered" >      return res.status(400).json({</span>
-<span class="cstat-no" title="statement not covered" >        error: err || "Unexpected error.",</span>
-<span class="cstat-no" title="statement not covered" >      });</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+  async execute(): Promise&lt;Feedback[]&gt; {
+    return await this.feedbackRepository.getFeedbacksApproved();
   }
 }
 &nbsp;</pre></td></tr></table></pre>

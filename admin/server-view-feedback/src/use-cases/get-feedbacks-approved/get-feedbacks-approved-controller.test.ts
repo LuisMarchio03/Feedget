@@ -17,6 +17,22 @@ describe("Create Category Controller", () => {
         status: "PENDENT",
       },
     });
+
+    await prismaService.feedback.create({
+      data: {
+        type: "BUG",
+        comment: "Test comment",
+        status: "APPROVED",
+      },
+    });
+
+    await prismaService.feedback.create({
+      data: {
+        type: "BUG",
+        comment: "Test comment",
+        status: "APPROVED",
+      },
+    });
   });
 
   afterAll(async () => {
@@ -24,8 +40,11 @@ describe("Create Category Controller", () => {
     await prismaService.$disconnect();
   });
 
-  it("should be able to return all feedbacks", async () => {
-    const response = await request(app).get("/feedbacks").send();
+  it("should be able to return all feedbacks approved", async () => {
+    const response = await request(app).get("/feedbacks/approved").send();
     expect(response.status).toBe(200);
+    expect(response.body).toHaveLength(2);
+    expect(response.body[0].status).toBe("APPROVED");
+    expect(response.body[1].status).toBe("APPROVED");
   });
 });
