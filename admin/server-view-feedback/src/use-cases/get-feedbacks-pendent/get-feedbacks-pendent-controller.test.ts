@@ -4,7 +4,7 @@ import { app } from "../../infra/http/app";
 
 let prismaService: PrismaClient;
 
-describe("Get Feedbacks Approved Controller", () => {
+describe("Get Feedbacks pendent Controller", () => {
   beforeAll(async () => {
     prismaService = new PrismaClient();
 
@@ -22,7 +22,7 @@ describe("Get Feedbacks Approved Controller", () => {
       data: {
         type: "BUG",
         comment: "Test comment",
-        status: "APPROVED",
+        status: "PENDENT",
       },
     });
 
@@ -40,11 +40,11 @@ describe("Get Feedbacks Approved Controller", () => {
     await prismaService.$disconnect();
   });
 
-  it("should be able to return all feedbacks approved", async () => {
-    const response = await request(app).get("/feedbacks/approved").send();
+  it("should be able to return all feedbacks pendent", async () => {
+    const response = await request(app).get("/feedbacks/pendent").send();
     expect(response.status).toBe(200);
     expect(response.body).toHaveLength(2);
-    expect(response.body[0].status).toBe("APPROVED");
-    expect(response.body[1].status).toBe("APPROVED");
+    expect(response.body[0].status).toBe("PENDENT");
+    expect(response.body[1].status).toBe("PENDENT");
   });
 });

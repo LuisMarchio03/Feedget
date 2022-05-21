@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for use-cases/get-feedbacks-approved/get-feedbacks-approved-use-case.ts</title>
+    <title>Code coverage report for use-cases/get-feedbacks-pendent/get-feedbacks-pendent-factory.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">use-cases/get-feedbacks-approved</a> get-feedbacks-approved-use-case.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">use-cases/get-feedbacks-pendent</a> get-feedbacks-pendent-factory.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -75,30 +75,36 @@
 <a name='L10'></a><a href='#L10'>10</a>
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
-<a name='L13'></a><a href='#L13'>13</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Feedback } from "../../infra/domain/feedback";
-import { FeedbackRepositoryInterface } from "../../repositories/feedback-repository-interface";
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PrismaFeedbackRepository } from "../../repositories/prisma/prisma-feedback-repository";
+import { GetFeedbacksPendentController } from "./get-feedbacks-pendent-controller";
+import { GetFeedbacksPendentUseCase } from "./get-feedbacks-pendent-use-case";
 &nbsp;
-export class GetFeedbacksApprovedUseCase {
-  constructor(
-    private readonly feedbackRepository: FeedbackRepositoryInterface
-  ) {}
-&nbsp;
-  async execute(): Promise&lt;Feedback[]&gt; {
-    return await this.feedbackRepository.getFeedbacksApproved();
-  }
-}
+export const GetFeedbacksPendentFactory = () =&gt; {
+  const prismaFeedbackRepository = new PrismaFeedbackRepository();
+  const getFeedbacksPendentUseCase = new GetFeedbacksPendentUseCase(
+    prismaFeedbackRepository
+  );
+  const getFeedbacksPendentController = new GetFeedbacksPendentController(
+    getFeedbacksPendentUseCase
+  );
+  return getFeedbacksPendentController;
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for use-cases/get-feedbacks-approved/get-feedbacks-approved-use-case.ts</title>
+    <title>Code coverage report for use-cases/get-feedbacks-pendent/get-feedbacks-pendent-use-case.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">use-cases/get-feedbacks-approved</a> get-feedbacks-approved-use-case.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">use-cases/get-feedbacks-pendent</a> get-feedbacks-pendent-use-case.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -90,13 +90,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Feedback } from "../../infra/domain/feedback";
 import { FeedbackRepositoryInterface } from "../../repositories/feedback-repository-interface";
 &nbsp;
-export class GetFeedbacksApprovedUseCase {
+export class GetFeedbacksPendentUseCase {
   constructor(
     private readonly feedbackRepository: FeedbackRepositoryInterface
   ) {}
 &nbsp;
   async execute(): Promise&lt;Feedback[]&gt; {
-    return await this.feedbackRepository.getFeedbacksApproved();
+    return await this.feedbackRepository.getFeedbacksPendent();
   }
 }
 &nbsp;</pre></td></tr></table></pre>

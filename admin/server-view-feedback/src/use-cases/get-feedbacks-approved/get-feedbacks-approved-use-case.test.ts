@@ -42,6 +42,10 @@ describe("Get All Feedbacks approved", () => {
     ];
   });
 
+  afterEach(() => {
+    repositoryCreateSpy.feedback = [];
+  });
+
   it("should be able to list all feedbacks approved", async () => {
     const feedbacks = await getFeedbacks.execute();
     expect(feedbacks).toHaveLength(2);

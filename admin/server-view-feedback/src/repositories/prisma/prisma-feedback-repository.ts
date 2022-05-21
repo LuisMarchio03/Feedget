@@ -15,8 +15,13 @@ export class PrismaFeedbackRepository implements FeedbackRepositoryInterface {
   getFeedbacksRejected(): Promise<Feedback[]> {
     throw new Error("Method not implemented.");
   }
-  getFeedbacksPendent(): Promise<Feedback[]> {
-    throw new Error("Method not implemented.");
+  async getFeedbacksPendent(): Promise<Feedback[]> {
+    const feedbacks = await this.prismaClient.feedback.findMany({
+      where: {
+        status: "PENDENT",
+      },
+    });
+    return feedbacks;
   }
   async getFeedbacksApproved(): Promise<Feedback[]> {
     const feedbacks = await this.prismaClient.feedback.findMany({
