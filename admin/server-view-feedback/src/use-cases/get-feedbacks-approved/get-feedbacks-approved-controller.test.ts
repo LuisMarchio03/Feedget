@@ -21,6 +21,14 @@ describe("Get Feedbacks Approved Controller", () => {
         status: "APPROVED",
       },
     });
+
+    await prismaService.feedback.create({
+      data: {
+        type: "BUG",
+        comment: "Test comment",
+        status: "REJECTED",
+      },
+    });
   });
 
   afterAll(async () => {
