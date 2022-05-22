@@ -34,7 +34,7 @@ describe("Get All Feedbacks", () => {
     ];
   });
 
-  afterEach(() => {
+  afterAll(() => {
     repositoryCreateSpy.feedback = [];
   });
 

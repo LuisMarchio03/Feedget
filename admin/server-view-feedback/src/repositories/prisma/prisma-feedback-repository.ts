@@ -9,11 +9,21 @@ export class PrismaFeedbackRepository implements FeedbackRepositoryInterface {
     const feedbacks = await this.prismaClient.feedback.findMany({});
     return feedbacks;
   }
-  getFeedback(id: string): Promise<Feedback> {
-    throw new Error("Method not implemented.");
+  async getFeedback(id: string): Promise<Feedback> {
+    const feedbacks = await this.prismaClient.feedback.findUnique({
+      where: {
+        id,
+      },
+    });
+    return feedbacks;
   }
-  getFeedbacksRejected(): Promise<Feedback[]> {
-    throw new Error("Method not implemented.");
+  async getFeedbacksRejected(): Promise<Feedback[]> {
+    const feedbacks = await this.prismaClient.feedback.findMany({
+      where: {
+        status: "REJECTED",
+      },
+    });
+    return feedbacks;
   }
   async getFeedbacksPendent(): Promise<Feedback[]> {
     const feedbacks = await this.prismaClient.feedback.findMany({
@@ -31,7 +41,15 @@ export class PrismaFeedbackRepository implements FeedbackRepositoryInterface {
     });
     return feedbacks;
   }
-  changeFeedbackStatus(id: string, status: string): Promise<Feedback> {
-    throw new Error("Method not implemented.");
+  async changeFeedbackStatus(id: string, status: string): Promise<Feedback> {
+    const feedback = await this.prismaClient.feedback.update({
+      where: {
+        id,
+      },
+      data: {
+        status: status,
+      },
+    });
+    return feedback;
   }
 }

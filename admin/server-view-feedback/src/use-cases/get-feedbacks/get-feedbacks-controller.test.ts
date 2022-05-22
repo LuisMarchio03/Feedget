@@ -2,14 +2,10 @@ import { PrismaClient } from "@prisma/client";
 import request from "supertest";
 import { app } from "../../infra/http/app";
 
-let prismaService: PrismaClient;
-
 describe("Create Category Controller", () => {
+  const prismaService = new PrismaClient();
+
   beforeAll(async () => {
-    prismaService = new PrismaClient();
-
-    await prismaService.$connect();
-
     await prismaService.feedback.create({
       data: {
         type: "BUG",
@@ -20,7 +16,8 @@ describe("Create Category Controller", () => {
   });
 
   afterAll(async () => {
-    await prismaService.feedback.deleteMany();
+    const deleteFeedbacks = prismaService.feedback.deleteMany();
+    await prismaService.$transaction([deleteFeedbacks]);
     await prismaService.$disconnect();
   });
 

@@ -42,7 +42,7 @@ describe("Get All Feedbacks approved", () => {
     ];
   });
 
-  afterEach(() => {
+  afterAll(() => {
     repositoryCreateSpy.feedback = [];
   });
 
