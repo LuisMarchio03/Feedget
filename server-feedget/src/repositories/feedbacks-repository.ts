@@ -4,6 +4,13 @@ export interface FeedbacksCreateDTO {
   screenshot?: string;
 }
 
+export interface FeedbackDTO {
+  id: string;
+  type: string;
+  comment: string;
+  screenshot?: string;
+}
+
 export interface FeedbacksRepository {
-  create: (data: FeedbacksCreateDTO) => Promise<void>;
+  create: (data: FeedbacksCreateDTO) => Promise<FeedbackDTO>;
 }

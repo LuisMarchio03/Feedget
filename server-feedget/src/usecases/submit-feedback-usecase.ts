@@ -1,5 +1,6 @@
 import { MailAdapter } from "../adapters/mail-adapter";
 import { FeedbacksRepository } from "../repositories/feedbacks-repository";
+import { KafkaService } from "../services/kafka-service";
 
 interface SubmitFeedbackUseCaseRequest {
   type: string;
@@ -10,7 +11,8 @@ interface SubmitFeedbackUseCaseRequest {
 export class SubmitFeedbackUseCase {
   constructor(
     private feedbacksRepository: FeedbacksRepository,
-    private mailAdapter: MailAdapter
+    private mailAdapter: MailAdapter,
+    private kafka: KafkaService
   ) {}
 
   async execute(request: SubmitFeedbackUseCaseRequest) {
@@ -23,7 +25,7 @@ export class SubmitFeedbackUseCase {
     if (screenshot && !screenshot.startsWith("data:image/png;base64"))
       throw new Error("Invalid screenshot format");
 
-    await this.feedbacksRepository.create({
+    const submitFeedback = await this.feedbacksRepository.create({
       type,
       comment,
       screenshot,
@@ -38,6 +40,13 @@ export class SubmitFeedbackUseCase {
         `<img src="${screenshot}"/>`,
         `</div>`,
       ].join("\n"),
+    });
+
+    await this.kafka.execute({
+      id: submitFeedback.id,
+      type: submitFeedback.type,
+      comment: submitFeedback.comment,
+      screenshot: submitFeedback.screenshot,
     });
   }
 }
