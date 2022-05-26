@@ -39,7 +39,6 @@ describe("Get All Feedback", () => {
   });
 
   it("should be able to list one feedback", async () => {
-    expect(await getFeedback.execute("1")).toHaveLength(1);
     expect(await getFeedback.execute("1")).toBeTruthy();
     expect(await getFeedback.execute("1")).toBe(
       repositoryCreateSpy.feedback[0]

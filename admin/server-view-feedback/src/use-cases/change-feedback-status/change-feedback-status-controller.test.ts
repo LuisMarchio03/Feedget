@@ -1,21 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 import request from "supertest";
+import { Feedback } from "../../infra/domain/feedback";
 import { app } from "../../infra/http/app";
 
-describe("Get Feedback Controller", () => {
-  let createdOne;
+describe("Change Feedback Status Controller", () => {
+  let feedbackCreated: Feedback;
   const prismaService = new PrismaClient();
 
   beforeAll(async () => {
-    createdOne = await prismaService.feedback.create({
-      data: {
-        type: "BUG",
-        comment: "Test comment",
-        status: "PENDENT",
-      },
-    });
-
-    await prismaService.feedback.create({
+    feedbackCreated = await prismaService.feedback.create({
       data: {
         type: "BUG",
         comment: "Test comment",
@@ -30,13 +23,14 @@ describe("Get Feedback Controller", () => {
     await prismaService.$disconnect();
   });
 
-  it("should be able to return one feedback", async () => {
+  it("should be able to update status for feedback", async () => {
     const response = await request(app)
-      .get(`/feedback/${createdOne.id}`)
-      .send();
+      .put(`/feedback/${feedbackCreated.id}`)
+      .send({ status: "APPROVED" });
 
     expect(response.status).toBe(200);
     expect(response.body).toBeTruthy();
-    expect(response.body.id).toBe(createdOne.id);
+    expect(response.body.id).toBe(feedbackCreated.id);
+    expect(response.body.status).toBe("APPROVED");
   });
 });
