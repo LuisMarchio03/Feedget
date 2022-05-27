@@ -10,7 +10,7 @@ let repositoryCreateSpy: MockFeedbackRepository;
 describe("Get All Feedbacks", () => {
   beforeEach(() => {
     repository = new MockFeedbackRepository();
-    getFeedback = new GetFeedbacksUseCase(repository, null);
+    getFeedback = new GetFeedbacksUseCase(repository);
 
     repositoryCreateSpy = repository as MockFeedbackRepository;
 

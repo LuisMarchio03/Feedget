@@ -3,16 +3,16 @@ version: "3"
 services:
   # Application
 
-  database:
-    image: "bitnami/postgresql"
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRESQL_USERNAME=docker
-      - POSTGRESQL_PASSWORD=docker
-      - POSTGRESQL_DATABASE=app
-    volumes:
-      - "postgresql_data:/bitnami/postgresql"
+  # database:
+  #   image: "bitnami/postgresql"
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     - POSTGRESQL_USERNAME=docker
+  #     - POSTGRESQL_PASSWORD=docker
+  #     - POSTGRESQL_DATABASE=app
+  #   volumes:
+  #     - "postgresql_data:/bitnami/postgresql"
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
@@ -46,7 +46,6 @@ services:
       KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
-
-volumes:
-  postgresql_data:
-    driver: local
+# volumes:
+#   postgresql_data:
+#     driver: local
