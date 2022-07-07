@@ -1,12 +1,14 @@
 import express from "express";
 import { PrismaFeedbackRepository } from "../../repositories/prisma/prisma-feedback-repository";
-import { KafkaService } from "../../services/kafka-service";
+import { RabbitMQServer } from "../../services/rabbitmqserver";
+
 import { ChangeFeedbackStatus } from "../../use-cases/change-feedback-status/change-feedback-status-factory";
 import { GetFeedbackFactory } from "../../use-cases/get-feedback/get-feedback-factory";
 import { GetFeedbacksApprovedFactory } from "../../use-cases/get-feedbacks-approved/get-feedbacks-approved-factory";
 import { GetFeedbacksPendentFactory } from "../../use-cases/get-feedbacks-pendent/get-feedbacks-pendent-factory";
 import { GetFeedbacksRejectedFactory } from "../../use-cases/get-feedbacks-rejected/get-feedbacks-rejected-factory";
 import { GetFeedbacksFactory } from "../../use-cases/get-feedbacks/get-feedbacks-factory";
+import { PushFeedbackUseCase } from "../../use-cases/push-feedback-database/push-feedback-usecase";
 
 export const routes = express.Router();
 
@@ -27,9 +29,23 @@ routes.put("/feedback/:id", (req, res) =>
   ChangeFeedbackStatus().handle(req, res)
 );
 
-routes.get("/teste", async (req, res) => {
-  const kafkaService = new KafkaService();
-  await kafkaService.execute();
+routes.post("/feedback", async (req, res) => {
+  const prismaFeedbackRepository = new PrismaFeedbackRepository();
+  const submitFeedbackUseCase = new PushFeedbackUseCase(
+    prismaFeedbackRepository
+  );
 
-  return res.json("Running");
+  const rabbitMQServer = new RabbitMQServer();
+  await rabbitMQServer.start();
+
+  let response;
+
+  await rabbitMQServer.consumer("feedback", (message) => {
+    console.log("Received message:", message);
+    response = message;
+  });
+
+  await submitFeedbackUseCase.execute(JSON.parse(response));
+
+  return res.status(201).send();
 });

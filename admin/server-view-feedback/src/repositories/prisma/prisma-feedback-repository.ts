@@ -2,6 +2,12 @@ import { PrismaClient } from "@prisma/client";
 import { Feedback } from "../../infra/domain/feedback";
 import { FeedbackRepositoryInterface } from "../feedback-repository-interface";
 
+interface PushFeedbackUseCaseRequest {
+  type: string;
+  comment: string;
+  screenshot?: string;
+}
+
 export class PrismaFeedbackRepository implements FeedbackRepositoryInterface {
   private prismaClient = new PrismaClient();
 
@@ -52,9 +58,18 @@ export class PrismaFeedbackRepository implements FeedbackRepositoryInterface {
     });
     return feedback;
   }
-  createFeedback(feedback: Feedback): Promise<Feedback> {
+  createFeedback({
+    comment,
+    type,
+    screenshot,
+  }: PushFeedbackUseCaseRequest): Promise<Feedback> {
     const feedbackCreated = this.prismaClient.feedback.create({
-      data: feedback,
+      data: {
+        comment,
+        type,
+        screenshot,
+        status: "PENDENT",
+      },
     });
     return feedbackCreated;
   }
