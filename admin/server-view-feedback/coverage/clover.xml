@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653594546762" clover="3.2.0">
-  <project timestamp="1653594546762" name="All files">
-    <metrics statements="431" coveredstatements="396" conditionals="61" coveredconditionals="53" methods="44" coveredmethods="42" elements="536" coveredelements="491" complexity="0" loc="431" ncloc="431" packages="10" files="23" classes="23"/>
+<coverage generated="1657209851176" clover="3.2.0">
+  <project timestamp="1657209851176" name="All files">
+    <metrics statements="501" coveredstatements="414" conditionals="60" coveredconditionals="53" methods="47" coveredmethods="42" elements="608" coveredelements="509" complexity="0" loc="501" ncloc="501" packages="11" files="24" classes="24"/>
     <package name="infra.http">
-      <metrics statements="40" coveredstatements="40" conditionals="7" coveredconditionals="6" methods="0" coveredmethods="0"/>
+      <metrics statements="65" coveredstatements="47" conditionals="7" coveredconditionals="6" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/infra/http/app.ts">
         <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -22,7 +22,7 @@
         <line num="14" count="1" type="stmt"/>
       </file>
       <file name="routes.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/infra/http/routes.ts">
-        <metrics statements="26" coveredstatements="26" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
+        <metrics statements="51" coveredstatements="33" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -33,28 +33,53 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="25" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
       </file>
     </package>
     <package name="repositories.mocks">
-      <metrics statements="40" coveredstatements="38" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="5"/>
+      <metrics statements="40" coveredstatements="40" conditionals="11" coveredconditionals="11" methods="6" coveredmethods="6"/>
       <file name="mock-feedback-repository.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/repositories/mocks/mock-feedback-repository.ts">
-        <metrics statements="40" coveredstatements="38" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="5"/>
+        <metrics statements="40" coveredstatements="40" conditionals="11" coveredconditionals="11" methods="6" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -63,9 +88,9 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="2" type="cond" truecount="1" falsecount="0"/>
@@ -98,70 +123,9 @@
       </file>
     </package>
     <package name="repositories.prisma">
-      <metrics statements="55" coveredstatements="55" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+      <metrics statements="76" coveredstatements="62" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="6"/>
       <file name="prisma-feedback-repository.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/repositories/prisma/prisma-feedback-repository.ts">
-        <metrics statements="55" coveredstatements="55" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="20" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="28" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="29" count="2" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="35" count="2" type="stmt"/>
-        <line num="36" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="44" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="48" count="2" type="stmt"/>
-        <line num="49" count="2" type="stmt"/>
-        <line num="50" count="2" type="stmt"/>
-        <line num="51" count="2" type="stmt"/>
-        <line num="52" count="2" type="stmt"/>
-        <line num="53" count="2" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="services">
-      <metrics statements="23" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
-      <file name="kafka-service.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/services/kafka-service.ts">
-        <metrics statements="23" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <metrics statements="76" coveredstatements="62" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -170,21 +134,104 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="50" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="24" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="rabbitmqserver.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/services/rabbitmqserver.ts">
+        <metrics statements="24" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
       </file>
     </package>
     <package name="use-cases.change-feedback-status">
@@ -301,7 +348,7 @@
       </file>
     </package>
     <package name="use-cases.get-feedbacks">
-      <metrics statements="49" coveredstatements="45" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
+      <metrics statements="41" coveredstatements="37" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
       <file name="get-feedbacks-controller.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/use-cases/get-feedbacks/get-feedbacks-controller.ts">
         <metrics statements="17" coveredstatements="13" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -323,42 +370,34 @@
         <line num="17" count="1" type="stmt"/>
       </file>
       <file name="get-feedbacks-factory.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/use-cases/get-feedbacks/get-feedbacks-factory.ts">
-        <metrics statements="17" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
       </file>
       <file name="get-feedbacks-use-case.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/use-cases/get-feedbacks/get-feedbacks-use-case.ts">
-        <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
       </file>
     </package>
     <package name="use-cases.get-feedbacks-approved">
@@ -530,6 +569,43 @@
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="use-cases.push-feedback-database">
+      <metrics statements="31" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="push-feedback-usecase.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/use-cases/push-feedback-database/push-feedback-usecase.ts">
+        <metrics statements="31" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
       </file>
     </package>
   </project>
