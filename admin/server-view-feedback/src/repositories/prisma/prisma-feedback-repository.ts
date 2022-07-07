@@ -52,4 +52,10 @@ export class PrismaFeedbackRepository implements FeedbackRepositoryInterface {
     });
     return feedback;
   }
+  createFeedback(feedback: Feedback): Promise<Feedback> {
+    const feedbackCreated = this.prismaClient.feedback.create({
+      data: feedback,
+    });
+    return feedbackCreated;
+  }
 }

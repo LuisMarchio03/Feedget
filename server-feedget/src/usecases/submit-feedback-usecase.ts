@@ -1,6 +1,6 @@
 import { MailAdapter } from "../adapters/mail-adapter";
 import { FeedbacksRepository } from "../repositories/feedbacks-repository";
-import { KafkaService } from "../services/kafka-service";
+import { RabbitMQServer } from "../services/rabbitmqserver";
 
 interface SubmitFeedbackUseCaseRequest {
   type: string;
@@ -11,8 +11,7 @@ interface SubmitFeedbackUseCaseRequest {
 export class SubmitFeedbackUseCase {
   constructor(
     private feedbacksRepository: FeedbacksRepository,
-    private mailAdapter: MailAdapter,
-    private kafka: KafkaService
+    private mailAdapter: MailAdapter
   ) {}
 
   async execute(request: SubmitFeedbackUseCaseRequest) {
@@ -42,11 +41,16 @@ export class SubmitFeedbackUseCase {
       ].join("\n"),
     });
 
-    await this.kafka.execute({
+    const rabbitMQServer = new RabbitMQServer();
+    await rabbitMQServer.start();
+
+    const obj = {
       id: submitFeedback.id,
       type: submitFeedback.type,
       comment: submitFeedback.comment,
       screenshot: submitFeedback.screenshot,
-    });
+    };
+
+    await rabbitMQServer.publish("feedback", JSON.stringify(obj));
   }
 }

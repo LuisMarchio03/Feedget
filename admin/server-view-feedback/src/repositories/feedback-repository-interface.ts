@@ -12,6 +12,7 @@ export interface CreateFeedbackSpyDTO {
 }
 
 export interface FeedbackRepositoryInterface {
+  createFeedback(feedback: Feedback): Promise<Feedback>;
   getFeedbacks(): Promise<Feedback[]>;
   getFeedback(id: string): Promise<Feedback>;
   getFeedbacksRejected(): Promise<Feedback[]>;

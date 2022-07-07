@@ -1,4 +1,6 @@
 import express from "express";
+import { PrismaFeedbackRepository } from "../../repositories/prisma/prisma-feedback-repository";
+import { KafkaService } from "../../services/kafka-service";
 import { ChangeFeedbackStatus } from "../../use-cases/change-feedback-status/change-feedback-status-factory";
 import { GetFeedbackFactory } from "../../use-cases/get-feedback/get-feedback-factory";
 import { GetFeedbacksApprovedFactory } from "../../use-cases/get-feedbacks-approved/get-feedbacks-approved-factory";
@@ -24,3 +26,10 @@ routes.get("/feedback/:id", (req, res) =>
 routes.put("/feedback/:id", (req, res) =>
   ChangeFeedbackStatus().handle(req, res)
 );
+
+routes.get("/teste", async (req, res) => {
+  const kafkaService = new KafkaService();
+  await kafkaService.execute();
+
+  return res.json("Running");
+});
