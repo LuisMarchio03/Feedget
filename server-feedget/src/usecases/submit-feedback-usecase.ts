@@ -40,17 +40,5 @@ export class SubmitFeedbackUseCase {
         `</div>`,
       ].join("\n"),
     });
-
-    const rabbitMQServer = new RabbitMQServer();
-    await rabbitMQServer.start();
-
-    const obj = {
-      id: submitFeedback.id,
-      type: submitFeedback.type,
-      comment: submitFeedback.comment,
-      screenshot: submitFeedback.screenshot,
-    };
-
-    await rabbitMQServer.publish("feedback", JSON.stringify(obj));
   }
 }

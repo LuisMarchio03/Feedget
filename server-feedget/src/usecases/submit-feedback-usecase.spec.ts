@@ -1,4 +1,3 @@
-import { KafkaService } from "../services/kafka-service";
 import { SubmitFeedbackUseCase } from "./submit-feedback-usecase";
 
 const createFeedbackSpy = jest.fn();
@@ -6,8 +5,7 @@ const sendEmailSpy = jest.fn();
 
 const submitFeedback = new SubmitFeedbackUseCase(
   { create: createFeedbackSpy },
-  { sendMail: sendEmailSpy },
-  new KafkaService()
+  { sendMail: sendEmailSpy }
 );
 
 describe("submit feedback", () => {

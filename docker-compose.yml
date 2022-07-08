@@ -14,6 +14,17 @@ services:
     volumes:
       - "postgresql_data:/bitnami/postgresql"
 
+  db-test:
+    image: postgres:13
+    restart: always
+    container_name: tests-prisma
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: tests
+
 volumes:
   postgresql_data:
     driver: local
