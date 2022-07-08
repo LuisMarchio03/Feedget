@@ -13,7 +13,7 @@ async function main() {
   await rabbitMQServer.start();
 
   setTimeout(async () => {
-    console.log("ENTROU");
+    console.log("Evento iniciado!");
     let response;
     await rabbitMQServer.consumer("feedback", async (message) => {
       console.log("Message: ", message);
