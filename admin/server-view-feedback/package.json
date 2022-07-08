@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test jest --verbose --forceExit --runInBand",
-    "studio-db-test": "NODE_ENV=test prisma studio",
+    "test": "npx prisma migrate deploy && jest -i --verbose --forceExit --runInBand",
+    "studio-db-test": "prisma studio",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/infra/http/server.ts"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
     "express": "^4.18.1",
     "jest-mock-extended": "^2.0.6",
     "kafkajs": "^2.0.1",
+    "pg": "^8.7.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

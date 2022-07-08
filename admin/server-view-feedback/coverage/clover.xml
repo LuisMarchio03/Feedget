@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657209851176" clover="3.2.0">
-  <project timestamp="1657209851176" name="All files">
-    <metrics statements="501" coveredstatements="414" conditionals="60" coveredconditionals="53" methods="47" coveredmethods="42" elements="608" coveredelements="509" complexity="0" loc="501" ncloc="501" packages="11" files="24" classes="24"/>
+<coverage generated="1657315534571" clover="3.2.0">
+  <project timestamp="1657315534571" name="All files">
+    <metrics statements="497" coveredstatements="412" conditionals="59" coveredconditionals="53" methods="47" coveredmethods="42" elements="603" coveredelements="507" complexity="0" loc="497" ncloc="497" packages="11" files="24" classes="24"/>
     <package name="infra.http">
-      <metrics statements="65" coveredstatements="47" conditionals="7" coveredconditionals="6" methods="0" coveredmethods="0"/>
+      <metrics statements="62" coveredstatements="45" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/infra/http/app.ts">
-        <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
@@ -18,11 +18,9 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
       </file>
       <file name="routes.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/infra/http/routes.ts">
-        <metrics statements="51" coveredstatements="33" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
+        <metrics statements="50" coveredstatements="33" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -72,8 +70,7 @@
         <line num="47" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
       </file>
     </package>
     <package name="repositories.mocks">
@@ -572,9 +569,9 @@
       </file>
     </package>
     <package name="use-cases.push-feedback-database">
-      <metrics statements="31" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="30" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="push-feedback-usecase.ts" path="/home/luis_marchio03/Documentos/web-apps/nlw-return/admin/server-view-feedback/src/use-cases/push-feedback-database/push-feedback-usecase.ts">
-        <metrics statements="31" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <metrics statements="30" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -604,8 +601,7 @@
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
       </file>
     </package>
   </project>
