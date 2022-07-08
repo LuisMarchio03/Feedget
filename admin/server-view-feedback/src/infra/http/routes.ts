@@ -41,11 +41,10 @@ routes.post("/feedback", async (req, res) => {
   let response;
 
   await rabbitMQServer.consumer("feedback", (message) => {
-    console.log("Received message:", message);
     response = message;
   });
 
-  await submitFeedbackUseCase.execute(JSON.parse(response));
+  const feedback = await submitFeedbackUseCase.execute(JSON.parse(response));
 
-  return res.status(201).send();
+  return res.status(201).json(feedback);
 });

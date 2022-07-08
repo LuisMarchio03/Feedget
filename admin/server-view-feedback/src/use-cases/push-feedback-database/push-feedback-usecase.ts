@@ -13,16 +13,15 @@ export class PushFeedbackUseCase {
   ) {}
 
   async execute(request: PushFeedbackUseCaseRequest) {
+    console.log("ENTROU");
+
     const { type, comment, screenshot } = request;
 
-    if (!type) throw new Error("Type is required");
+    if (!type) return;
 
-    if (!comment) throw new Error("Comment is required");
+    if (!comment) return;
 
-    if (screenshot && !screenshot.startsWith("data:image/png;base64"))
-      throw new Error("Invalid screenshot format");
-
-    const submitFeedback = await this.feedbackRepository.createFeedback({
+    await this.feedbackRepository.createFeedback({
       type,
       comment,
       screenshot,
