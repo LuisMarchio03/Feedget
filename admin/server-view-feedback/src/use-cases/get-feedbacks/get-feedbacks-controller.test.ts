@@ -1,3 +1,7 @@
+/**
+ * @jest-environment ./prisma/prisma-environment-jest
+ */
+
 import { PrismaClient } from "@prisma/client";
 import request from "supertest";
 import { app } from "../../infra/http/app";

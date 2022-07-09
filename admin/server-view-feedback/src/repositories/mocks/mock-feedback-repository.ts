@@ -1,6 +1,12 @@
 import { Feedback } from "../../infra/domain/feedback";
 import { FeedbackRepositoryInterface } from "../feedback-repository-interface";
 
+interface PushFeedbackUseCaseRequest {
+  type: string;
+  comment: string;
+  screenshot?: string;
+}
+
 export default class MockFeedbackRepository
   implements FeedbackRepositoryInterface
 {
@@ -36,5 +42,8 @@ export default class MockFeedbackRepository
     feedback.status = status;
 
     return Promise.resolve(feedback);
+  }
+  createFeedback(feedback: PushFeedbackUseCaseRequest): Promise<Feedback> {
+    throw new Error("Method not implemented.");
   }
 }
