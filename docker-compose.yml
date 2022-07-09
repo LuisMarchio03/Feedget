@@ -3,28 +3,43 @@ version: "3"
 services:
   # Application
 
-  database:
+  db-admin-server-view-feedback:
     image: "bitnami/postgresql"
     ports:
-      - "5432:5432"
+      - "5438:5432"
     environment:
-      - POSTGRESQL_USERNAME=docker
-      - POSTGRESQL_PASSWORD=docker
-      - POSTGRESQL_DATABASE=app
+      - POSTGRESQL_USERNAME=admin
+      - POSTGRESQL_PASSWORD=admin
+      - POSTGRESQL_DATABASE=admin
     volumes:
-      - "postgresql_data:/bitnami/postgresql"
+      - "postgresql_data_admin:/bitnami/postgresql"
 
-  db-test:
-    image: postgres:13
-    restart: always
-    container_name: tests-prisma
+  db-admin-server-view-feedback-test:
+    image: "bitnami/postgresql"
     ports:
-      - "5433:5432"
+      - "5444:5432"
     environment:
-      POSTGRES_USER: prisma
-      POSTGRES_PASSWORD: prisma
-      POSTGRES_DB: tests
+      - POSTGRESQL_USERNAME=test
+      - POSTGRESQL_PASSWORD=test
+      - POSTGRESQL_DATABASE=test
+    volumes:
+      - "postgresql_data_admin_test:/bitnami/postgresql"
+
+  db-server-feedget:
+    image: "bitnami/postgresql"
+    ports:
+      - "5439:5432"
+    environment:
+      - POSTGRESQL_USERNAME=feedget
+      - POSTGRESQL_PASSWORD=feedget
+      - POSTGRESQL_DATABASE=feedget
+    volumes:
+      - "postgresql_data_feedget:/bitnami/postgresql"
 
 volumes:
-  postgresql_data:
+  postgresql_data_admin:
+    driver: local
+  postgresql_data_feedget:
+    driver: local
+  postgresql_data_admin_test:
     driver: local
