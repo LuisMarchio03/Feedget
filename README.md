@@ -12,7 +12,6 @@
 <p class="has-line-data" data-line-start="16" data-line-end="17">Feedget, uses different technologies to get the best results</p>
 <ul>
 <li class="has-line-data" data-line-start="18" data-line-end="19"><strong>React.js</strong></li>
-<li class="has-line-data" data-line-start="19" data-line-end="20"><strong>Next.js</strong></li>
 <li class="has-line-data" data-line-start="20" data-line-end="21"><strong>Tailwind CSS</strong></li>
 <li class="has-line-data" data-line-start="21" data-line-end="22"><strong>Node.js</strong></li>
 <li class="has-line-data" data-line-start="22" data-line-end="23"><strong>Postgres SQL</strong></li>
