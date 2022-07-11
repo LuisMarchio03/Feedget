@@ -18,7 +18,7 @@
 <li class="has-line-data" data-line-start="25" data-line-end="27"><strong>Jest</strong></li>
 </ul>
 <h2 class="code-line" data-line-start=27 data-line-end=28 ><a id="Installation_27"></a>Installation</h2>
-<p class="has-line-data" data-line-start="29" data-line-end="30">Dillinger requires <a href="https://nodejs.org/">Node.js</a> v10+ to run.</p>
+<p class="has-line-data" data-line-start="29" data-line-end="30">Feedget requires <a href="https://nodejs.org/">Node.js</a> to run.</p>
 <p class="has-line-data" data-line-start="31" data-line-end="32">Install the dependencies and devDependencies and start the server.</p>
 <pre><code class="has-line-data" data-line-start="34" data-line-end="37" class="language-sh">npm i
 npm run dev
