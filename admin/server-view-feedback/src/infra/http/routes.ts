@@ -1,6 +1,6 @@
 import express from "express";
-import { PrismaFeedbackRepository } from "../../repositories/prisma/prisma-feedback-repository";
-import { RabbitMQServer } from "../../services/rabbitmqserver";
+// import { PrismaFeedbackRepository } from "../../repositories/prisma/prisma-feedback-repository";
+// import { RabbitMQServer } from "../../services/rabbitmqserver";
 
 import { ChangeFeedbackStatus } from "../../use-cases/change-feedback-status/change-feedback-status-factory";
 import { GetFeedbackFactory } from "../../use-cases/get-feedback/get-feedback-factory";
@@ -8,7 +8,8 @@ import { GetFeedbacksApprovedFactory } from "../../use-cases/get-feedbacks-appro
 import { GetFeedbacksPendentFactory } from "../../use-cases/get-feedbacks-pendent/get-feedbacks-pendent-factory";
 import { GetFeedbacksRejectedFactory } from "../../use-cases/get-feedbacks-rejected/get-feedbacks-rejected-factory";
 import { GetFeedbacksFactory } from "../../use-cases/get-feedbacks/get-feedbacks-factory";
-import { PushFeedbackUseCase } from "../../use-cases/push-feedback-database/push-feedback-usecase";
+import { PushFeedbackFactory } from "../../use-cases/push-feedback-database/get-feedbacks-rejected-factory";
+// import { PushFeedbackUseCase } from "../../use-cases/push-feedback-database/push-feedback-usecase";
 
 export const routes = express.Router();
 
@@ -29,22 +30,24 @@ routes.put("/feedback/:id", (req, res) =>
   ChangeFeedbackStatus().handle(req, res)
 );
 
-routes.post("/feedback", async (req, res) => {
-  const prismaFeedbackRepository = new PrismaFeedbackRepository();
-  const submitFeedbackUseCase = new PushFeedbackUseCase(
-    prismaFeedbackRepository
-  );
+// routes.post("/feedback", async (req, res) => {
+//   const prismaFeedbackRepository = new PrismaFeedbackRepository();
+//   const submitFeedbackUseCase = new PushFeedbackUseCase(
+//     prismaFeedbackRepository
+//   );
 
-  const rabbitMQServer = new RabbitMQServer();
-  await rabbitMQServer.start();
+//   const rabbitMQServer = new RabbitMQServer();
+//   await rabbitMQServer.start();
 
-  let response;
+//   let response;
 
-  await rabbitMQServer.consumer("feedback", (message) => {
-    response = message;
-  });
+//   await rabbitMQServer.consumer("feedback", (message) => {
+//     response = message;
+//   });
 
-  const feedback = await submitFeedbackUseCase.execute(JSON.parse(response));
+//   const feedback = await submitFeedbackUseCase.execute(JSON.parse(response));
 
-  return res.status(201).json(feedback);
-});
+//   return res.status(201).json(feedback);
+// });
+
+routes.post("/feedback", (req, res) => PushFeedbackFactory().handle(req, res));

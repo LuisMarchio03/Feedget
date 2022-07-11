@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@prisma/client": "^3.14.0",
+    "@swc/core": "^1.2.187",
     "amqplib": "^0.10.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
