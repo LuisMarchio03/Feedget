@@ -1,7 +1,5 @@
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Feedget_0"></a>Feedget</h1>
 <h2 class="code-line" data-line-start=1 data-line-end=2 ><a id="_system_to_manage_feedbacks_from_users__1"></a><em>system to manage feedbacks, from users</em></h2>
-<p class="has-line-data" data-line-start="3" data-line-end="4"><a href="https://nodesource.com/products/nsolid"><img src="https://cldup.com/dTxpPi9lDf.thumb.png" alt="N|Solid"></a></p>
-<p class="has-line-data" data-line-start="5" data-line-end="6"><a href="https://travis-ci.org/joemccann/dillinger"><img src="https://travis-ci.org/joemccann/dillinger.svg?branch=master" alt="Build Status"></a></p>
 <p class="has-line-data" data-line-start="7" data-line-end="8">feedget, consists of an application, where a given user sends feedback, it is the support team, receives this feedback… the team responsible for support, should put a status for the feedback, the default status is “pending”… After that, the team can send it to the correct department, putting the feedback as approved… finally, when solving or accepting the feedback, it will be placed as “completed”… otherwise, the team just “reject” the feedback</p>
 <h2 class="code-line" data-line-start=9 data-line-end=10 ><a id="Features_9"></a>Features</h2>
 <ul>
